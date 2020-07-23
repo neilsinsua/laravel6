@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\Contact;
 use App\Mail\ContactMe;
 use http\Env\Request;
 use Illuminate\Support\Facades\Mail;
@@ -23,12 +24,8 @@ class ContactController
             'email' => 'required|email',
         ]);
         //2. send email
-        Mail::to(\request('email'))->send(new ContactMe('Laravel'));
-
-//         Mail::raw('It works!', function ($message) {
-//                 $message->to(request('email'), '$username');
-//                 $message->subject('Its Working!');
-//             });
+        Mail::to(\request('email'))->send(new Contact());
+        
          //3. redirect to contact page
          return redirect('/contact')
             ->with('success', 'Email Sent!');
