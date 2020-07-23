@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="39353bd5-24ad-4345-82b9-c70139062fe8" name="Homestead" url="http://laravel6.demo">
+        <fileTransfer rootFolder="/home/vagrant" accessType="SFTP" host="127.0.0.1" port="2222" sshConfigId="a9997d01-079a-4435-bfd9-dee43ba2cba0" sshConfig="vagrant@127.0.0.1:2222 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
