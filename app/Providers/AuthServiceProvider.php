@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Articles;
+use http\Client\Curl\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,6 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('update-article', function(\App\User $user, Articles $articles) {
+            return $articles->user->is($user);
+        });
     }
 }

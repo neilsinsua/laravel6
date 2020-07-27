@@ -15,21 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
-
-Route::get('/payments/create', 'PaymentController@show')->middleware('auth')->name('pay');
-Route::post('payments/create', 'PaymentController@store')->name('paid');
-Route::get('payments/received', 'UserNotificationsController@show')->name('received');
-
-//Email
-Route::get('/contact', 'ContactController@show');
-Route::post('/contact', 'ContactController@store');
-
-Route::get('/debug-sentry', function () {
-    throw new Exception('My first Sentry error!');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('conversations', 'ConversationsController@index');
+Route::get('conversations/{conversation}', 'ConversationsController@show');
 

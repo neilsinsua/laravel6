@@ -25,6 +25,7 @@ class AwardAchievements
      * @return void
      */
     public function handle(ProductPurchased $event)
+        //asks for event
     {
         ddd('Achievement Awarded!');
     }
